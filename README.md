@@ -26,14 +26,14 @@ This can then be used to package the app for samsung accordingly (see the docker
    - Install Docker Desktop — [Installation Guide](https://docs.docker.com/desktop/)
    - Run in Windows PowerShell:
      ```
-     docker run -it --rm ghcr.io/oneliberty/moonlight-chrome-tizen:samsung_wasm
+     docker run -it --rm ghcr.io/oneliberty/moonlight-tizen-nacl:samsung_nacl
      ```
 3. **Install the Application**:
    - Connect and install via Smart Development Bridge:
      ```
      sdb connect YOUR_TV_IP
      sdb devices
-     tizen install -n Moonlight.wgt -t YOUR_DEVICE_ID
+     tizen install -n MoonlightNaCl.wgt -t YOUR_DEVICE_ID
      exit
      ```
    - Replace `YOUR_TV_IP` and `YOUR_DEVICE_ID` with your TV's IP and Device ID respectively.
