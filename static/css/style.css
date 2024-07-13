@@ -1,0 +1,332 @@
+body {
+    background-color: #282C38;
+    color: #fff;
+    font-family: 'Roboto', sans-serif;
+}
+.page-title {
+    font-weight: 300;
+    font-size: 26px;
+    margin-top: 20px;
+    margin-bottom: 30px;
+    width: 100%;
+    text-align: center;
+}
+span.mdl-layout-title {
+    font-weight: 300;
+}
+span.mdl-layout-title > span {
+    font-weight: 900;
+    color: #00A3C6;
+}
+
+.mdl-layout__header-row {
+    padding: 0 80px 0 80px;
+}
+
+main {
+    padding: 0 80px 0 80px;
+}
+
+@media screen and (max-width: 600px) {
+    #host-grid .mdl-card {
+        flex-basis: 50% !important;
+    }
+    #game-grid .mdl-card {
+        height: 100px !important;
+        width: 75px !important;
+    }
+}
+
+@media screen and (min-width: 600px) and (max-width: 800px) {
+    #host-grid .mdl-card {
+        flex-basis: 33% !important;
+    }
+    #game-grid .mdl-card {
+        height: 150px !important;
+        width: 112.5px !important;
+    }
+}
+
+@media screen and (min-width: 800px) and (max-width: 1024px) {
+    main {
+        padding: 0 72px 0 72px !important;
+    }
+    .mdl-layout__header-row {
+        padding: 0 72px 0 72px !important;
+    }
+    #host-grid .mdl-card {
+        flex-basis: 25% !important;
+    }
+    #game-grid .mdl-card {
+        height: 200px !important;
+        width: 150px !important;
+    }
+}
+
+@media screen and (min-width: 1024px) {
+    #game-grid .mdl-card {
+        height: 300px !important;
+        width: 225px !important;
+    }
+}
+
+.nav-menu-parent {
+    position: relative;
+    margin: 0 4px;
+}
+.mdl-menu__outline {
+    background-color: #333846;
+    color: white;
+}
+.mdl-menu__item {
+    color: white;
+}
+.mdl-menu__item:hover, .mdl-menu__item.hovered, .mdl-menu__item:focus {
+    background-color: #00A3C6;
+}
+#bitrateField {
+    width: 100px;
+    height: 36px;
+    overflow: hidden;
+    text-transform: none;
+}
+.bitrateMenu {
+    width: 170px;
+}
+
+.mdl-button {
+    color: #fff !important;
+}
+.mdl-grid {
+    width: 100%;
+}
+.mdl-cell {
+    text-align: center;
+    color:#fff;
+    padding:25px;
+}
+#backIcon {
+    position: fixed;
+    left: 28px;
+}
+#backIcon:hover {
+    cursor: pointer;
+}
+.mdl-dialog {
+    width: 400px;
+    background-color: #333846;
+    color: white;
+}
+.mdl-dialog__title {
+    padding: 24px 24px 0;
+    margin: 0;
+    font-size: 2.5rem;
+}
+.mdl-dialog__content {
+    padding: 20px 24px 24px 24px;
+    color: rgba(255, 255, 255, 0.90);
+}
+.mdl-textfield__input {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.90);
+}
+.mdl-textfield__label {
+    color: rgba(255, 255, 255, 0.90);
+}
+#naclSpinner {
+    display: none;
+    z-index: 2;
+    position: fixed;
+    left: 50%;
+    bottom: 50%;
+    transform: translate(-50%, -50%);
+    margin: 0 auto;
+    text-align: center;
+}
+#loadingSpinner {
+    display: none;
+    z-index: 1;
+    position: fixed;
+    left: 50%;
+    bottom: 50%;
+    transform: translate(-50%, -50%);
+    margin: 0 auto;
+    color: white;
+    text-align: center;
+}
+#snackButton {
+    width: 0px;
+    height: 0px;
+    display: none;
+}
+.mdl-snackbar__text {
+    padding: 14px 30px 14px 30px;
+}
+.mdl-snackbar {
+    min-width:0px;
+}
+#host-grid, #game-grid {
+    padding: 0;
+    margin: 0;
+    flex: 1;
+    display: flex;
+    flex-flow: row wrap;
+    align-items: center;
+    justify-content: center;
+}
+#host-grid .mdl-card {
+    flex-basis: 15%;
+}
+#game-grid .mdl-card {
+    position: relative;
+    background: url('../res/placeholder_game.svg') rgba(29, 29, 29, 1) center/cover no-repeat;
+}
+#host-grid .mdl-card, #game-grid .mdl-card {
+    text-align: center;
+    width: 170px;
+    height: 170px;
+    min-height: 170px;
+    margin: 15px;
+    cursor: pointer;
+    transition: all .2s ease-in-out;
+    will-change: transform;
+}
+#host-grid .mdl-card:hover, #host-grid .mdl-card:focus, #host-grid .mdl-card:active, #game-grid .mdl-card:focus, #game-grid .mdl-card:active {
+    transform: scale(1.15);
+    outline : #00A3C6 solid 2px;;
+}
+#host-grid .mdl-card__title {
+    padding: 0;
+}
+#host-grid .mdl-card__title .mdl-card__title-text {
+    width: 100%;
+    font-size: 14px;
+    padding: 10px 15px;
+    background-color: rgba(0,0,0,0.7);
+}
+#game-grid .mdl-card img {
+    height: 100%;
+    width: 100%;
+    opacity: 0;
+    transition: opacity .3s;
+    z-index: -1;
+}
+#game-grid .mdl-card img.fade-in {
+    opacity: 1;
+}
+#game-grid .game-title {
+    position: absolute;
+    bottom: 0;
+    min-height: 20px;
+    font-size: 13px;
+    font-weight: 300;
+    padding: 5px 0;
+    width: 100%;
+    color: white;
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0.6);
+}
+#game-grid .game-title span {
+    padding: 0 10px;
+}
+.add-host-card > .mdl-card__title {
+    color: #fff;
+    background:
+            url('../res/ic_add_to_queue_white_48px.svg') center no-repeat #3E4454;
+}
+.host-container > .mdl-card__title {
+    color: #fff;
+    background:
+            url('../res/ic_tv_white_48px.svg') center no-repeat #3E4454;
+}
+.mdl-card.hovered {
+    background-color: initial;
+    outline: #00A3C6 solid 2px; 
+    transform: scale(1.15);
+}
+#host-grid p {
+    margin: 0;
+}
+#host-grid .mdl-textfield {
+    width: 200px;
+    margin-right: 20px;
+    margin-bottom: 0px;
+}
+#host-grid #GFEHostIPField {
+    padding-bottom: 0px;
+}
+#host-grid #selectHost {
+    padding: 0px;
+    line-height: 20px;
+    height: 20px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    margin-right: 20px;
+    background: none;
+}
+#host-grid .button-holder {
+    padding: 0px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+.remove-host {
+    position:absolute;
+    right:5px;
+    top:5px;
+    width:24px;
+    height:24px;
+    z-index: 5;
+    background-image: url('../res/ic_remove_circle_outline_white_48px.svg');
+    background-repeat: no-repeat;
+    background-size: 20px 20px;
+    background-position: center;
+    border: 0;
+    cursor: pointer;
+}
+/*.remove-host:hover, .remove-host:focus {
+    background-image: url('\\static\\res\\ic_remove_circle_white_24px.svg');
+}*/
+#pairButton {
+    margin: 3px;
+}
+#showAppsButton {
+    margin: 3px;
+}
+#listener {
+    overflow: hidden;
+    margin-top: 0px;
+    height: 0px;
+}
+.fullscreen {
+    height: 100vh !important;
+    overflow: hidden !important;
+    margin: auto !important;
+    padding: 0 !important;
+    border: none !important;
+}
+.current-game {
+    outline: auto #8BC34A;
+}
+.host-cell-inactive {
+    outline: auto #F44336;
+}
+.host-cell:hover {
+    cursor: pointer;
+    color: #000 !important;
+}
+.cancel-current:hover {
+    cursor: pointer;
+}
+.cancel-current {
+    border: 2px solid white;
+    padding: 5px;
+    border-radius: 5px;
+}
+.cancel-current img {
+    margin-right: 5px;
+}
+.cancel-current .game-title {
+    color: #fff;
+}
+#nacl_module {
+    cursor: none;
+}
