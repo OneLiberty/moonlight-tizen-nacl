@@ -1,3 +1,9 @@
+<p align=left>
+	<a href="https://discord.gg/zHafSd3bTw">
+		<img src="https://discordapp.com/api/guilds/1196915612522393651/widget.png?style=banner2" alt="Discord Banner 2"/> 
+	</a>
+</p>
+
 ## Moonlight-Tizen-NaCl
 GameStream client for Samsung Smart TV's running Tizen OS (3.0 to 6.0) 
 
