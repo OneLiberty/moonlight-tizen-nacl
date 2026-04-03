@@ -58,21 +58,13 @@ function getConnectedGamepadMask() {
   for (var i = 0; i < gamepads.length; i++) {
     var gamepad = gamepads[i];
     if (gamepad) {
-      // See logic in gamepad.cpp
-      // These must stay in sync!
-
       if (!gamepad.connected) {
-        // Not connected
         continue;
       }
 
-      if (gamepad.timestamp == 0) {
-        // On some platforms, Chrome returns "connected" pads that
-        // really aren't, so timestamp stays at zero. To work around this,
-        // we'll only count gamepads that have a non-zero timestamp in our
-        // controller index.
-        continue;
-      }
+      // Removed timestamp == 0 check — on Tizen 4.0 reports timestamp=0
+      // permanently even for fully working controllers, so we can't
+      // use it to filter out "ghost" gamepads here.
 
       mask |= 1 << count++;
     }
@@ -81,6 +73,7 @@ function getConnectedGamepadMask() {
   console.log('%c[utils.js, getConnectedGamepadMask]', 'color:gray;', 'Detected ' + count + ' gamepads');
   return mask;
 }
+
 
 String.prototype.toHex = function() {
   var hex = '';

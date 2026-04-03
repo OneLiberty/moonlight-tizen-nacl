@@ -7,6 +7,11 @@
 ## Moonlight-Tizen-NaCl
 GameStream client for Samsung Smart TV's running Tizen OS (3.0 to 6.0) 
 
+## PLEASE DO NOT USE MY FORK, THIS IS MY TESTING FORK. Please use the installation below or the actual link to the original which will be untouched, and linked to the official/original build.
+
+https://github.com/OneLiberty/moonlight-tizen-nacl
+
+
 ### Note
 As a non-developer with limited coding knowledge, I do my best to maintain the repository and address issues. If you encounter problems, please report them in the issue section. While I can't guarantee a solution, I will certainly investigate.
 This project is delivered as a POC, don't expect good performances and a fully working environement. 
